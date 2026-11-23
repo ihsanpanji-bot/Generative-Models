@@ -1,6 +1,3 @@
-"""Menjalankan seluruh pipeline berurutan. Gunakan --skip untuk melewati model yang sudah dilatih.
-Contoh: python run_all.py --skip ddpm
-"""
 import argparse
 import subprocess
 import sys
