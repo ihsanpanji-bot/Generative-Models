@@ -1,10 +1,6 @@
-# Studi Komparatif Model Generatif: AE, Sparse AE, VAE, Vanilla GAN, DCGAN, DDPM
-
-Tugas Take-Home Sesi 06 (Autoencoders) + Sesi 07 (GANs & Diffusion). Dataset: **Fashion-MNIST**
+Dataset: **Fashion-MNIST**
 (70.000 citra, split 80/10/10 = 56k/7k/7k, seed 42, batch size 128).
 
-Selain enam model generatif, repo ini berisi eksperimen pembuktian batasan **MLP Classifier**
-untuk image generation (Bagian III laporan).
 
 ## Instalasi
 ```bash
@@ -15,14 +11,12 @@ pip install -r requirements.txt  # untuk GPU NVIDIA, install torch dari https://
 
 ## Menjalankan (dari root repo)
 ```bash
-python -m src.train --model ae        # juga: sae | vae | mlp | gan | dcgan | ddpm
-python -m src.mlp_proof               # Tahap 1-5 pembuktian MLP -> Figur 3 (butuh model mlp & ae)
-python -m src.evaluate                # tabel metrik -> results/metrics_table.md (butuh semua model)
-python -m src.make_figures            # Figur 1, 2, 4, 5
-python run_all.py                     # semuanya berurutan
+python -m src.train --model ae
+python -m src.mlp_proof # Tahap 1-5 pembuktian MLP -> Figur 3 (butuh model mlp & ae)
+python -m src.evaluate   # tabel metrik -> results/metrics_table.md (butuh semua model)
+python -m src.make_figures
+python run_all.py    # semuanya secara berurutan
 ```
-Opsi berguna: `--epochs N` (train), `--lam` (bobot L1 Sparse AE), `--fid-n` / `--skip-fid` (evaluate).
-Semua keluaran ada di `results/` (gambar 200 dpi, `metrics.json`, `mlp_proof.json`, `history.json` tiap model).
 
 ## Struktur
 ```
@@ -50,7 +44,3 @@ Catatan standardisasi: AE/VAE bekerja di [0,1] (sigmoid); GAN dan DDPM di [-1,1]
 kembali ke [0,1] sebelum menghitung metrik. Dimensi laten AE/Sparse AE/VAE = 64 (sama dengan z_MLP).
 Latency = rata-rata waktu per batch 64 (warm-up + sinkronisasi GPU); DDPM = sampling penuh T=1000 langkah.
 FID dihitung dengan jumlah sampel sama untuk semua model (default 5000 vs test set).
-
-## Notebook
-`run_experiments.ipynb` menjalankan seluruh pipeline di atas (lokal atau Google Colab dengan GPU).
-Kode utama tetap berupa modul `.py` di `src/`.
