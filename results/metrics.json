@@ -1,0 +1,57 @@
+{
+ "ae": {
+  "display": "Vanilla Autoencoder",
+  "latent": "64",
+  "params_M": 0.435536,
+  "train_s_per_epoch": 0.8185785299981945,
+  "mse": 0.007046802900731564,
+  "psnr": 22.607446670532227,
+  "ssim": 0.8173713065881704,
+  "latency_ms_b64": 0.19203000119887292
+ },
+ "sae": {
+  "display": "Sparse Autoencoder",
+  "latent": "64 (L1)",
+  "params_M": 0.435536,
+  "train_s_per_epoch": 1.4184684050036593,
+  "mse": 0.00867726095020771,
+  "psnr": 21.623260498046875,
+  "ssim": 0.7815985513038044,
+  "latency_ms_b64": 0.2786249970085919
+ },
+ "vae": {
+  "display": "VAE",
+  "latent": "64",
+  "params_M": 1.11656,
+  "train_s_per_epoch": 2.2667389466427266,
+  "mse": 0.014947312884032726,
+  "psnr": 19.168697357177734,
+  "ssim": 0.7016545323629804,
+  "latency_ms_b64": 0.13821999891661108,
+  "fid": 62.41598892211914
+ },
+ "gan": {
+  "display": "Vanilla GAN (MLP)",
+  "latent": "100 (prior noise)",
+  "params_M": 2.946577,
+  "train_s_per_epoch": 4.903813350011478,
+  "latency_ms_b64": 0.3686550015117973,
+  "fid": 114.05084228515625
+ },
+ "dcgan": {
+  "display": "DCGAN",
+  "latent": "100 (prior noise)",
+  "params_M": 1.920194,
+  "train_s_per_epoch": 16.507598026651735,
+  "latency_ms_b64": 1.3607300003059208,
+  "fid": 22.044174194335938
+ },
+ "ddpm": {
+  "display": "DDPM",
+  "latent": "28x28 (dimensi citra)",
+  "params_M": 2.145409,
+  "train_s_per_epoch": 50.195663688015195,
+  "latency_ms_b64": 11803.157399990596,
+  "fid": 11.84494400024414
+ }
+}

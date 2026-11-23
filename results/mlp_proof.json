@@ -1,0 +1,24 @@
+{
+ "mlp_test_acc": 0.8868571519851685,
+ "stage2_mse_vs_class_mean": 0.10566499829292297,
+ "stage2_std_across_classes": 0.09133558720350266,
+ "stage3_latent_transpose": {
+  "mse": 0.2932039499282837,
+  "psnr": 5.380374908447266,
+  "ssim": 0.07208113192320913
+ },
+ "stage4_frozen_decoder_mlp": {
+  "mse": 0.08693886548280716,
+  "psnr": 10.93659782409668,
+  "ssim": 0.1722044281501408
+ },
+ "stage4_vanilla_ae": {
+  "mse": 0.007046802900731564,
+  "psnr": 22.607446670532227,
+  "ssim": 0.8173713065881704
+ },
+ "stage5_latent_stats": {
+  "frac_dead_units": 0.15625,
+  "frac_zero_activations": 0.5184018015861511
+ }
+}
